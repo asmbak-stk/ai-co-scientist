@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Co-Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand">
+        <span class="brand-mark">⚗︎</span>
+        <div>
+          <h1>AI Co-Scientist</h1>
+          <p class="tagline">Agentisk hypotesegenerering — Generation · Reflection · Ranking · Evolution · Proximity · Meta-review</p>
+        </div>
+      </div>
+      <div class="engine-badge" id="engineBadge">…</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel goal-panel">
+      <label for="goal" class="field-label">Forskningsmål</label>
+      <textarea id="goal" rows="2" placeholder="F.eks. Effekten av ulike pedagogiske metoder på dybdelæring i videregående skole"></textarea>
+      <div class="controls">
+        <label class="ctrl">Runder
+          <select id="rounds">
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+          </select>
+        </label>
+        <label class="ctrl checkbox">
+          <input type="checkbox" id="webSearch" />
+          Web-søk <span class="muted" id="wsHint"></span>
+        </label>
+        <button id="startBtn" class="btn-primary">Start forskning</button>
+        <button id="cancelBtn" class="btn-secondary" hidden>Avbryt</button>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="panel col-log">
+        <h2 class="col-title">Agent-aktivitet <span class="status-dot" id="statusDot"></span></h2>
+        <div id="log" class="log"></div>
+      </section>
+
+      <section class="panel col-cards">
+        <h2 class="col-title">Hypoteser <span class="count" id="hypoCount">0</span></h2>
+        <div id="cards" class="cards">
+          <p class="placeholder" id="cardsPlaceholder">Hypotesene dukker opp her, rangert live etter Elo-turneringen.</p>
+        </div>
+      </section>
+
+      <section class="panel col-clusters">
+        <h2 class="col-title">Klynger</h2>
+        <div id="clusters" class="clusters">
+          <p class="placeholder">Proximity-agenten grupperer like hypoteser.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel overview-panel" id="overviewPanel" hidden>
+      <h2 class="col-title">Forskningsoversikt</h2>
+      <div id="overview"></div>
+    </section>
+  </main>
+
+  <footer class="usage-bar" id="usageBar">
+    <span id="usageMode">mock</span>
+    <span class="sep">·</span>
+    <span>cache-lest: <b id="uCacheRead">0</b></span>
+    <span class="sep">·</span>
+    <span>input: <b id="uInput">0</b></span>
+    <span class="sep">·</span>
+    <span>output: <b id="uOutput">0</b></span>
+    <span class="sep">·</span>
+    <span>est. kostnad: <b id="uCost">$0.00</b></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
