@@ -1,0 +1,18 @@
+{
+  "name": "ai-co-scientist",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "AI Co-Scientist — a standalone multi-agent hypothesis engine (mock by default, Claude API optional)",
+  "scripts": {
+    "start": "node --env-file=.env src/server.js",
+    "start:noenv": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.69.0",
+    "zod": "^3.25.0"
+  }
+}
